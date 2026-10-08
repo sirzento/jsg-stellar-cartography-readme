@@ -1,3 +1,6 @@
+> This readme describes **version 0.21.4**. If you play an older version, some of the features and settings described
+> here may not exist yet.
+
 [![Watch the trailer on YouTube](images/trailer.jpg)](https://youtu.be/bzUp_dDhpyM)
 
 ![Stellar Cartography](images/banner.jpg)
@@ -14,8 +17,6 @@ shared within your team.
 **Requires:** Minecraft 1.20.1 · Forge 47 · Just Stargate Mod 5.1.2  
 **Optional:** FTB Teams · Stargate Odyssey Core
 
-All blocks are crafted from JSG materials, check JEI for the recipes.
-
 ---
 
 ## Features
@@ -29,6 +30,11 @@ All blocks are crafted from JSG materials, check JEI for the recipes.
 - **Server Racks** add computing power and speed up research. They only need to stand within 8 blocks of the
   computer (also above or below), they don't have to touch it. Up to 16 racks count.
 - Racks make research faster, not more expensive: a destination always costs the same total energy.
+- A **Satellite Dish** lets the computer analyze at all: the **small** dish unlocks Milky Way destinations, the
+  **medium** one also the Galaxies level, the **large** one every level up to the Universe. Dishes add no computing
+  power. A dish only needs to stand within 20 blocks of the computer; each computer uses one dish.
+
+![Large satellite dish on a roof](images/satellite_dish.jpg)
 
 ### The Star Map
 
@@ -48,7 +54,7 @@ All blocks are crafted from JSG materials, check JEI for the recipes.
 ![Select, analyze, dial](images/research_steps.png)
 
 1. **Select** an uncharted destination. The console shows how long the analysis takes and how much energy it needs.
-2. **Analyze** it. The computer uses FE while it works; more racks make it faster.
+2. **Analyze** it (with a big enough satellite dish). The computer uses FE while it works; more racks make it faster.
 3. **Dial**: a charted destination reveals its gate address, world, distance, the energy your gate needs to dial and survey
    data like climate, atmosphere and threat level. One click on **DIAL** lets your Stargate dial it.
 
@@ -124,6 +130,8 @@ Copy it to `defaultconfigs/` to use it for every new world. All multipliers defa
 | `computePerRack` | `1.0` | Work units per tick each server rack adds. |
 | `maxRacks` | `16` | Maximum number of racks a computer uses. |
 | `rackRadius` | `8` | How far (in blocks, every direction) a rack may be from the computer. |
+| `requireDish` | `true` | Analyses need a satellite dish: small for the Milky Way, medium for Galaxies, large for the Universe. |
+| `dishRadius` | `20` | How far (in blocks, as a sphere) a satellite dish may be from the computer. |
 | `workMilkyWay` | `24000` | Work to research a Milky Way destination (24000 = 20 minutes without racks). |
 | `workGalaxies` | `96000` | Work to research a destination on the Galaxies level. |
 | `workUniverse` | `288000` | Work to research a destination on the Universe level. |
