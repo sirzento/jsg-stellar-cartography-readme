@@ -1,4 +1,4 @@
-> This readme describes **version 0.22.1**. If you play an older version, some of the features and settings described
+> This readme describes **version 0.23.0**. If you play an older version, some of the features and settings described
 > here may not exist yet.
 
 [![Watch the trailer on YouTube](images/trailer.jpg)](https://youtu.be/bzUp_dDhpyM)
@@ -66,7 +66,8 @@ from all others, so it feels like a new world.
 ![The three subspace relays](images/subspace_relays.jpg)
 
 - At first only the **two systems nearest to home** of every level receive a signal. Everything else shows as faint
-  noise on the map and can't be analysed yet.
+  noise on the map and can't be analysed yet. On the Milky Way they are linked to **Earth**, whose relay is your
+  computer's satellite dish.
 - Travel to a system and build a **Subspace Relay** within 32 blocks of its Stargate: the systems linked to it
   receive a signal and can be analysed. Work your way out from home, relay by relay.
 - The **small** relay works on the Milky Way, the
@@ -171,7 +172,7 @@ Copy it to `defaultconfigs/` to use it for every new world. All multipliers defa
 | `dimensionWhitelist` | `[]` | If not empty, only these dimensions get destinations. |
 | `dimensionBlacklist` | `[]` | These dimensions never get destinations. |
 | `hiddenDimensions` | `[]` | Destinations of these dimensions stay hidden until a team imports a gate of that dimension from a notebook page. Great for secret worlds. |
-| `excludeHomeDimension` | `false` | `true` keeps the Overworld off the map. With `false` it gets destinations like any other dimension. |
+| `excludeHomeDimension` | `false` | `true` keeps the Overworld off the map. With `false` its first destination is **Earth** at Sol (always charted and visited), further ones are ordinary planets. |
 
 **Gate**
 
