@@ -1,4 +1,4 @@
-> This readme describes **version 0.21.4**. If you play an older version, some of the features and settings described
+> This readme describes **version 0.22.1**. If you play an older version, some of the features and settings described
 > here may not exist yet.
 
 [![Watch the trailer on YouTube](images/trailer.jpg)](https://youtu.be/bzUp_dDhpyM)
@@ -9,7 +9,8 @@
 
 **Stellar Cartography** brings the control room of Stargate Command to **Just Stargate Mod**.
 Build an SGC computer next to your Stargate, research distant worlds on a star map spanning the Milky Way, other
-galaxies and the whole universe, reveal their gate addresses and dial them with a single click.
+galaxies and the whole universe, reveal their gate addresses and dial them with a single click. Travel there and build
+subspace relays to pick up the signals of the worlds beyond.
 
 Every destination on the map leads to a real dimension of your world, so the map grows with your modpack. Progress is
 shared within your team.
@@ -40,10 +41,8 @@ shared within your team.
 
 ![The three map levels](images/map_levels.png)
 
-- Three map levels: the **Milky Way** (light years), **Galaxies** like Andromeda or the Pegasus Dwarf (millions of
-  light years) and the **Universe** of superclusters (billions of light years).
+- Three map levels: the **Milky Way**, **Galaxies** and the **Universe** of superclusters.
 - The map is generated from your world seed, so every world has its own.
-- Destinations you haven't researched yet only show "???".
 - **Galaxies** and **Universe** unlock once the DHD of the nearby Stargate has a **DHD Glyph Crystal** (8/9 chevrons),
   or when the computer is linked to a Universe Stargate.
 - Marker colours show what you know: uncharted, charted, visited (someone of your team travelled there) and
@@ -53,14 +52,33 @@ shared within your team.
 
 ![Select, analyze, dial](images/research_steps.png)
 
-1. **Select** an uncharted destination. The console shows how long the analysis takes and how much energy it needs.
+1. **Select** an uncharted destination that receives a signal (see Subspace Relays below). The console shows how long
+   the analysis takes and how much energy it needs.
 2. **Analyze** it (with a big enough satellite dish). The computer uses FE while it works; more racks make it faster.
 3. **Dial**: a charted destination reveals its gate address, world, distance, the energy your gate needs to dial and survey
    data like climate, atmosphere and threat level. One click on **DIAL** lets your Stargate dial it.
 
 The first destination of a dimension leads to its main Stargate. Every further one gets a Stargate of its own, far away
-from all others, so it feels like a new world. If the computer stands in another dimension than the
-Overworld, the map marks its location and measures all distances from there.
+from all others, so it feels like a new world.
+
+### Subspace Relays
+
+![The three subspace relays](images/subspace_relays.jpg)
+
+- At first only the **two systems nearest to home** of every level receive a signal. Everything else shows as faint
+  noise on the map and can't be analysed yet.
+- Travel to a system and build a **Subspace Relay** within 32 blocks of its Stargate: the systems linked to it
+  receive a signal and can be analysed. Work your way out from home, relay by relay.
+- The **small** relay works on the Milky Way, the
+  **medium** one also on the Galaxies level, the **large** one on every level. The relay computer
+  needs no power and no loaded chunks.
+- While a relay stands, the systems linked to it need **25 % less work** to analyse.
+- Every SGC computer of your team logs relays going online or offline in its mission log.
+
+![The relay network on the map](images/relay_network.png)
+
+The map draws the links: a line between two systems with a signal, brighter with a pulse running along it next to
+your relays, and only a short dashed hint towards a destination without a signal.
 
 ### Gate List & Notebook Pages
 
@@ -167,6 +185,17 @@ Copy it to `defaultconfigs/` to use it for every new world. All multipliers defa
 | `dialCostMultiplier` | `1.0` | Energy to open a wormhole. Applies to **every** Stargate, also when dialed with a DHD. |
 | `upholdCostMultiplier` | `1.0` | Energy per tick to keep a wormhole open. Applies to every Stargate. |
 | `distanceCostMultiplier` | `1.0` | How much distance raises the gate energy (`0` = distance doesn't matter, `2.0` = far targets cost twice as much extra). |
+
+**Relay**
+
+| Setting | Default | What it does |
+|---|---|---|
+| `requireRelays` | `true` | Destinations need a signal to be analysed. `false`: every destination of an unlocked level can be analysed at once, as before 0.22.0. |
+| `startSignals` | `2` | How many destinations of every level (the nearest to home) receive a signal from the start. |
+| `linkFalloff` | `1.25` | How quickly the chance of a link drops with the distance between two destinations. Higher values give more cross links, but also more long lines between groups. |
+| `maxLinks` | `3` | Most links a destination has. |
+| `relayRadius` | `32` | How far (in blocks) a relay may be from the Stargate of its destination. |
+| `relayBonus` | `0.25` | Less analysis work for destinations linked to one of the team's relays (`0` = no bonus). |
 
 **Other**
 
