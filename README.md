@@ -1,8 +1,6 @@
 > This readme describes **version 0.24.1**. If you play an older version, some of the features and settings described
 > here may not exist yet.
 
-[![Watch the trailer on YouTube](images/trailer.jpg)](https://youtu.be/bzUp_dDhpyM)
-
 ![Stellar Cartography](images/banner.jpg)
 
 # JSG: Stellar Cartography
