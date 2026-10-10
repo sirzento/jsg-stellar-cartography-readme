@@ -1,4 +1,4 @@
-> This readme describes **version 0.23.2**. If you play an older version, some of the features and settings described
+> This readme describes **version 0.24.1**. If you play an older version, some of the features and settings described
 > here may not exist yet.
 
 [![Watch the trailer on YouTube](images/trailer.jpg)](https://youtu.be/bzUp_dDhpyM)
@@ -17,6 +17,18 @@ shared within your team.
 
 **Requires:** Minecraft 1.20.1 · Forge 47 · Just Stargate Mod 5.1.2  
 **Optional:** FTB Teams · Stargate Odyssey Core
+
+---
+
+## Quick Guide: Installation
+
+- **Add mods with more dimensions** (strongly recommended): the map is only as varied as your modpack. Then assign
+  the new dimensions to a map level in [`dimensionLevels`](#server-config), otherwise they all end up on the Milky Way.
+- **Disable the other portals** (recommended). A mod like [I dont want portal yet](https://www.curseforge.com/minecraft/mc-mods/i-dont-want-portal-yet) closes every portal that isn't a
+  Stargate, so the gate is the only way out and the Stargate feeling comes through much better.
+- **Few dimensions? Expect repeats.** By default every map level gets 30+ systems shared among its dimensions, so with
+  only one or two dimensions each one appears many times. Set `destinationMode` to `ONE_PER_DIMENSION` to give every
+  dimension exactly one system. More in [Configuration](#configuration).
 
 ---
 
@@ -168,7 +180,7 @@ Copy it to `defaultconfigs/` to use it for every new world. All multipliers defa
 | `destinationsUniverse` | `34` | Number of Universe destinations (1–200, `FILL` only). |
 | `fillBlacklist` | `["minecraft:the_end"]` | Dimensions that appear only once, even in `FILL` mode. The other dimensions of their level fill the rest (`FILL` only). Useful for dimensions with one clear, unique structure like the End, where a second gate far away wouldn't make sense. |
 | `seedSalt` | `0` | Change it to get a different map without changing the world seed. Research progress is kept. |
-| `dimensionLevels` | `[]` | Puts a dimension on a map level, e.g. `["minecraft:the_end=galaxies", "jsg:abydos=universe"]`. Levels: `milky_way`, `galaxies`, `universe`. Dimensions without an entry are on the Milky Way, so **Galaxies and Universe stay empty until you assign dimensions to them**. |
+| `dimensionLevels` | `["minecraft:the_nether=milky_way", "jsg:abydos=galaxies", "minecraft:the_end=universe"]` | Puts a dimension on a map level. Levels: `milky_way`, `galaxies`, `universe`. Dimensions without an entry are on the Milky Way, so **Galaxies and Universe stay empty unless a dimension is assigned to them**. |
 | `dimensionWhitelist` | `[]` | If not empty, only these dimensions get destinations. |
 | `dimensionBlacklist` | `[]` | These dimensions never get destinations. |
 | `hiddenDimensions` | `[]` | Destinations of these dimensions stay hidden until a team imports a gate of that dimension from a notebook page. Great for secret worlds. |
